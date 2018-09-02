@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Countdown</title>
+</head>
+<body>
+    <input type="text" id="time" style="border:3px solid blue; text-align:center; font-size:2em;" disabled="true"/>
+    <script>window.onload = function() { countdown(3); }</script>
+    <script>
+        function countdown(num) {
+            let counter = num;
+            let interval = setInterval(
+                function () {
+                    if(counter <= 1){
+                        clearInterval(interval);
+                    }
+                    counter--;
+                    document.getElementById("time").value = `${Math.trunc(counter / 60)}:${counter % 60 < 10 ? `0${counter % 60}` : counter % 60}`;
+                },1000
+            );
+        }
+    </script>
+</body>
+</html>
