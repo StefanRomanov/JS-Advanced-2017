@@ -26,7 +26,6 @@ class Textbox{
     }
 	
     setTextOfElements(text){
-
 	for(let element of this.elements){
             $(element).val(text);
         }
