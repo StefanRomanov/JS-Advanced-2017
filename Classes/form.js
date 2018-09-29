@@ -24,10 +24,15 @@ let result = (function(){
 
         set value(text){
             this._value = text;
-            for(let element of this.elements){
+	    setTextInElements(text);
+            
+        }
+
+	setTextInElements(text){
+	    for(let element of this.elements){
                 $(element).val(text);
             }
-        }
+	}
 
         isValid() {
             return !this._invalidSymbols.test(this.value);
