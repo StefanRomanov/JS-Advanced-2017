@@ -22,7 +22,11 @@ class Textbox{
 
     set value(text){
         this._value = text;
-        for(let element of this.elements){
+        setElementsText(text);
+    }
+
+    setElementsText(text){
+	for(let element of this.elements){
             $(element).val(text);
         }
     }
