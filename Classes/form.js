@@ -31,7 +31,6 @@ let result = (function(){
 
         isValid() {
             return !this._invalidSymbols.test(this.value);
-
         }
     }
 
@@ -49,7 +48,11 @@ let result = (function(){
         }
 
         submit(){
-            let allValid = true;
+            return validateTextboxes();
+        }
+
+	validateTextboxes(){
+	   let allValid = true;
             for(let textbox of this._textboxes){
                 if(textbox.isValid() === true){
                     $(textbox.selector).css('border', '2px solid green')
@@ -58,8 +61,7 @@ let result = (function(){
                     allValid = false;
                 }
             }
-            return allValid;
-        }
+	}
 
         attach(selector){
             $(this._element).appendTo($(selector));
