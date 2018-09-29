@@ -22,6 +22,7 @@ class Textbox{
 
     set value(text){
         this._value = text;
+	setTextOfElements(text)
     }
 
     setTextOfElements(text){
