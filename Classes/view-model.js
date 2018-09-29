@@ -24,10 +24,13 @@ class Textbox{
         this._value = text;
 	setTextOfElements(text)
     }
+	
+    setTextOfElements(text){
 
 	for(let element of this.elements){
             $(element).val(text);
         }
+    }
 
     isValid() {
         return !this._invalidSymbols.test(this.value);
